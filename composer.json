@@ -1,0 +1,28 @@
+{
+  "name": "kscerbiakas/invoicy",
+  "description": "Laravel package for Invoicy api consumption",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Karolis Ščerbiakas"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Invoicy\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "require": {
+    "php": "^7.1.3",
+    "guzzlehttp/guzzle": "^6.3@dev"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Invoicy\\InvoicyServiceProvider"
+      ]
+    }
+  }
+}
