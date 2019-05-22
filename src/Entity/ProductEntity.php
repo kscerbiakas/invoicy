@@ -7,7 +7,7 @@ class ProductEntity extends AbstractEntity
 {
 
     /**
-     * @var int|null
+     * @var CategoryEntity|null
      */
     public $category;
 
@@ -52,5 +52,10 @@ class ProductEntity extends AbstractEntity
      *
      */
     public $price;
+
+    /**
+     * @var boolean
+     */
+    public $in_stock;
 
 }

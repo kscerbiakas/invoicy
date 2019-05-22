@@ -48,6 +48,6 @@ class InvoicyClient implements InvoicyClientInterface
         $body = (string)$this->response->getBody();
         $code = (int)$this->response->getStatusCode();
         $content = json_decode($body);
-        throw new HttpException(isset($content->message) ? $content->message : 'Something unexpected happened.', $code);
+        throw new HttpException(isset($content->message) ? $content->message : 'Request not processed.', $code);
     }
 }

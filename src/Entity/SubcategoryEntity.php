@@ -2,7 +2,11 @@
 
 namespace Invoicy\Entity;
 
-class SubcategoryEntity extends AbstractEntity
+class SubcategoryEntity extends CategoryEntity
 {
+    /**
+     * @var CategoryEntity
+     */
+    public $category;
 
 }

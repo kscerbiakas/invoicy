@@ -4,6 +4,7 @@ namespace Invoicy;
 
 use Illuminate\Support\ServiceProvider;
 
+
 class InvoicyServiceProvider extends ServiceProvider
 {
 
