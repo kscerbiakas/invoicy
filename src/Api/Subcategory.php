@@ -31,6 +31,17 @@ class Subcategory extends AbstractApi
         $subcategoryEntity->category = $subcategoryEntity->category ? new CategoryEntity($subcategoryEntity->category) : null;
 
         return $subcategoryEntity;
+    }
 
+
+    public function publicSubcategories()
+    {
+        $publicSubcategories = $this->client->get(sprintf('%s/public/projects/product-subcategories', $this->endpoint));
+
+        $publicSubcategories = json_decode($publicSubcategories);
+
+        return array_map(function ($subcategory) {
+            return new SubcategoryEntity($subcategory);
+        }, $publicSubcategories->data);
     }
 }
