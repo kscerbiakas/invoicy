@@ -12,4 +12,9 @@ class CategoryEntity extends AbstractEntity
     public $meta_title;
 
     public $title;
+
+    /**
+     * @var array SubcategoryEntity
+     */
+    public $subcategories;
 }

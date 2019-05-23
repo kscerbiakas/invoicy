@@ -4,6 +4,7 @@
 namespace Invoicy\Api;
 
 use Invoicy\Entity\CategoryEntity;
+use Invoicy\Entity\SubcategoryEntity;
 
 class Category extends AbstractApi
 {
@@ -14,7 +15,14 @@ class Category extends AbstractApi
         $publicCategories = json_decode($publicCategories);
 
         return array_map(function ($category) {
-            return new CategoryEntity($category);
+            $publicCategory = new CategoryEntity($category);
+            if (!empty($category->subcategories)) {
+                $publicCategory->subcategories = array_map(function ($subcategory) {
+                    return new SubcategoryEntity($subcategory);
+                }, $category->subcategories);
+
+            }
+            return $publicCategory;
         }, $publicCategories->data);
     }
 
