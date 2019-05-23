@@ -13,6 +13,8 @@ class CategoryEntity extends AbstractEntity
 
     public $title;
 
+    public $published_at;
+
     /**
      * @var array SubcategoryEntity
      */
