@@ -41,7 +41,7 @@ class Subcategory extends AbstractApi
         $publicSubcategories = json_decode($publicSubcategories);
 
         return array_map(function ($item) {
-            $subcategory = new Subcategory($item);
+            $subcategory = new SubcategoryEntity($item);
             $subcategory->category = $item->category ? new CategoryEntity($item->category) : null;
             return $subcategory;
         }, $publicSubcategories->data);
