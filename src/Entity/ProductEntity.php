@@ -37,6 +37,11 @@ class ProductEntity extends AbstractEntity
     public $image_url;
 
     /**
+     * @var string;
+     */
+    public $slug;
+
+    /**
      * @var string|null
      *
      */
