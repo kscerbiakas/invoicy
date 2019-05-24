@@ -13,10 +13,10 @@ class Subcategory extends AbstractApi
 
         $publicSubcategories = json_decode($publicSubcategories);
 
-        return array_map(function ($subcategory) {
-            $subcategoryEntity = new SubcategoryEntity($subcategory);
-            $subcategoryEntity->category = $subcategoryEntity->category ? new CategoryEntity($subcategoryEntity->category) : null;
-            return $subcategoryEntity;
+        return array_map(function ($item) {
+            $subcategory = new SubcategoryEntity($item);
+            $subcategory->category = $subcategory->category ? new CategoryEntity($subcategory->category) : null;
+            return $subcategory;
         }, $publicSubcategories->data);
     }
 
@@ -40,8 +40,10 @@ class Subcategory extends AbstractApi
 
         $publicSubcategories = json_decode($publicSubcategories);
 
-        return array_map(function ($subcategory) {
-            return new SubcategoryEntity($subcategory);
+        return array_map(function ($item) {
+            $subcategory = new Subcategory($item);
+            $subcategory->category = $item->category ? new CategoryEntity($item->category) : null;
+            return $subcategory;
         }, $publicSubcategories->data);
     }
 }
